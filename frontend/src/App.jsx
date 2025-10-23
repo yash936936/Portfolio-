@@ -122,8 +122,7 @@ const Navbar = () => {
     </nav>
   );
 };
-
-// Hero Component
+// Hero Component - FIXED SPACING
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -139,55 +138,50 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-gray-900 via-purple-900 to-blue-900 pt-16">
-      {/* Animated background shapes */}
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-br from-gray-900 via-purple-900 to-blue-900 pt-14 pb-8">
+      {/* Simplified background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-          style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
-        ></div>
-        <div 
-          className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
-          style={{ transform: `translate(${-mousePosition.x}px, ${mousePosition.y}px)` }}
-        ></div>
-        <div 
-          className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
-          style={{ transform: `translate(${mousePosition.x}px, ${-mousePosition.y}px)` }}
-        ></div>
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-48 h-48 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fadeInUp">
-          <div className="inline-block mb-3 px-3 py-1 bg-gray-800/80 backdrop-blur-sm rounded-full text-xs font-medium text-gray-300">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="space-y-4">
+          {/* Welcome Badge */}
+          <div className="inline-block px-3 py-1 bg-gray-800/80 backdrop-blur-sm rounded-full text-xs font-medium text-gray-300 mb-2">
             👋 Welcome to my portfolio
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          {/* Main Name */}
+           <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
             <span className="bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
               Yash Malik
             </span>
           </h1>
           
-          <h2 className="text-xl md:text-3xl font-semibold text-gray-100 mb-4">
+          {/* Subtitle */}
+          <h2 className="text-lg md:text-2xl font-semibold text-gray-100">
             MERN Stack Developer & AI Enthusiast
           </h2>
           
-          <p className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          {/* Description */}
+          <p className="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Crafting digital experiences that blend elegant design with powerful functionality. 
             Specializing in scalable full-stack solutions and innovative data-driven applications.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-2 justify-center items-center pt-2">
             <a
               href="#projects"
-              className="group relative px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 text-sm"
+              className="px-5 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm"
             >
-              <span className="relative z-10">Explore My Work</span>
-              <div className="absolute inset-0 bg-linear-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              Explore My Work
             </a>
             <a
               href="#contact"
-              className="px-6 py-3 bg-gray-800 text-white rounded-lg font-semibold border border-gray-700 hover:border-purple-500 hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm"
+              className="px-5 py-2.5 bg-gray-800 text-white rounded-lg font-semibold border border-gray-700 hover:border-purple-500 hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm"
             >
               Get In Touch
             </a>
@@ -195,11 +189,14 @@ const Hero = () => {
         </div>
       </div>
 
-      <a href="#about" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll indicator */}
+      <div>
+         <a href="#about" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-600 rounded-full p-1">
           <div className="w-1.5 h-2 bg-linear-to-b from-blue-500 to-purple-500 rounded-full mx-auto animate-scroll"></div>
         </div>
       </a>
+      </div>
     </section>
   );
 };
